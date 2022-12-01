@@ -97,7 +97,7 @@ container.appendChild(div);
 header.appendChild(container);
 document.body.prepend(header);
 document.body.appendChild(footer);
-document.body.style.marginTop="150px";
+document.body.classList.add("nav_top")
 
 
 
