@@ -21,7 +21,62 @@ var formSearch = document.createElement("form");
 var searchInput = document.createElement("input");
 var buttonContainer = document.createElement("div");
 var searchButton = document.createElement("button");
+var footer = document.createElement("footer");
+footer.innerHTML = `
+        <!-- fondo negro, 
+        texto centrado, texto blanco -->
+    
+        <div class="container p-4 pb-0">
+          <!-- contenedor, padding de 4 espacios,
+       padding inferior de 0 espacios 
+      -->
+    
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-danger">Mision</h5>
+    
+              <p>
+                Nuestra Vision es que nuestros clientes llega a su lugar de destino de manera satisfactoria, asi
+                pudiendo darles un servicio de calidad.Dandoles los mejores precios para que sean accesibles
+                para poder completar su prosito en el viaje sin preocupaciones de presupuesto.
+              </p>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase text-danger">Vision</h5>
+    
+              <p>
+                Ser líder en el mercado nacional de transporte de personal, garantizando un servicio de excelencia en
+                calidad de tiempo y seguridad, protegiendo al medio ambiente, que genere valor para nuestros clientes con
+                tecnología de punta en nuestros vehículos en materia internacional de seguridad, manteniendo a nuestros
+                clientes satisfechos para que nos consideren como su mejor proveedor.
+              </p>
+            </div>
+            <!--Grid column-->
+          </div>
+    
+    
+        </div>
+    
+        <div class="container">
+          <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                  <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Inicio</a></li>
+                  <li class="nav-item"><a href="Servicios.html" class="nav-link px-2 text-white">Nuestros Servicios</a></li>
+                  <li class="nav-item"><a href="contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
+    
+              </ul>
 
+            
+              <p class="text-center text-danger">&copy; Realizado por: Jordy, Kevin, Melany, Jonathan, Steeven</p>
+    
+`;
+footer.classList.add("bg-dark", "text-center", "text-white");
+footer.style.borderRadius = "25px";
 header.classList.add("mx-1", "mt-1", "p-3", "bg-dark", "text-white");
 header.style.borderRadius = "25px"
 
@@ -50,7 +105,7 @@ addLinkToNav("Noticias", "noticias.html");
 addLinkToNav("Seguridad", "seguridad.html");
 addLinkToNav("Politica", "politica.html");
 addLinkToNav("Deportes", "deportes.html");
-addLinkToNav("acerca_de", "acerca_de.html");
+addLinkToNav("Acerca de", "acerca_de.html");
 
 formSearch.appendChild(searchInput);
 buttonContainer.appendChild(searchButton);
@@ -61,6 +116,9 @@ div.appendChild(buttonContainer);
 container.appendChild(div);
 header.appendChild(container);
 document.body.prepend(header);
+document.body.appendChild(footer);
+
+
 
 
 console.log("a");
