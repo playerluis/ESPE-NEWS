@@ -4,3 +4,12 @@
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
 }
+body {
+    margin-top: 150px !important;
+  }
+
+@media (max-width: 992px) {
+    body {
+      margin-top: 280px !important;
+    }
+  }
