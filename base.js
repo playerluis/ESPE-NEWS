@@ -52,6 +52,9 @@ footer.innerHTML = `
 </div>
 `;
 
+
+
+
 footer.classList.add("bg-dark", "text-center", "text-white");
 footer.style.borderRadius = "25px";
 header.classList.add("mx-1", "mt-1", "p-3", "bg-dark", "text-white");
