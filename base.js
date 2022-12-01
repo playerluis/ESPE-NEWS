@@ -57,7 +57,7 @@ footer.innerHTML = `
 
 footer.classList.add("bg-dark", "text-center", "text-white");
 footer.style.borderRadius = "25px";
-header.classList.add("mx-1", "mt-1", "p-3", "bg-dark", "text-white");
+header.classList.add("mx-1", "mt-1", "p-3", "bg-dark", "text-white","fixed-top");
 header.style.borderRadius = "25px"
 
 container.classList.add("container");
@@ -97,6 +97,7 @@ container.appendChild(div);
 header.appendChild(container);
 document.body.prepend(header);
 document.body.appendChild(footer);
+document.body.style.marginTop="150px";
 
 
 
