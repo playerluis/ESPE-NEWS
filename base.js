@@ -50,8 +50,8 @@ footer.innerHTML = `
       <p class="text-center text-danger">&copy; Realizado por: Jordy, Kevin, Melany, Jonathan, Steeven</p>
   </footer>
 </div>
-    
 `;
+
 footer.classList.add("bg-dark", "text-center", "text-white");
 footer.style.borderRadius = "25px";
 header.classList.add("mx-1", "mt-1", "p-3", "bg-dark", "text-white");
