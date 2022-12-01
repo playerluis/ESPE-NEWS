@@ -105,7 +105,7 @@ addLinkToNav("Noticias", "noticias.html");
 addLinkToNav("Seguridad", "seguridad.html");
 addLinkToNav("Politica", "politica.html");
 addLinkToNav("Deportes", "deportes.html");
-addLinkToNav("acerca_de", "acerca_de.html");
+addLinkToNav("Acerca de", "acerca_de.html");
 
 formSearch.appendChild(searchInput);
 buttonContainer.appendChild(searchButton);
