@@ -23,56 +23,33 @@ var buttonContainer = document.createElement("div");
 var searchButton = document.createElement("button");
 var footer = document.createElement("footer");
 footer.innerHTML = `
-        <!-- fondo negro, 
-        texto centrado, texto blanco -->
-    
-        <div class="container p-4 pb-0">
-          <!-- contenedor, padding de 4 espacios,
-       padding inferior de 0 espacios 
-      -->
-    
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-              <h5 class="text-uppercase text-danger">Mision</h5>
-    
-              <p>
-                Nuestra Vision es que nuestros clientes llega a su lugar de destino de manera satisfactoria, asi
-                pudiendo darles un servicio de calidad.Dandoles los mejores precios para que sean accesibles
-                para poder completar su prosito en el viaje sin preocupaciones de presupuesto.
-              </p>
-            </div>
-            <!--Grid column-->
-    
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-              <h5 class="text-uppercase text-danger">Vision</h5>
-    
-              <p>
-                Ser líder en el mercado nacional de transporte de personal, garantizando un servicio de excelencia en
-                calidad de tiempo y seguridad, protegiendo al medio ambiente, que genere valor para nuestros clientes con
-                tecnología de punta en nuestros vehículos en materia internacional de seguridad, manteniendo a nuestros
-                clientes satisfechos para que nos consideren como su mejor proveedor.
-              </p>
-            </div>
-            <!--Grid column-->
-          </div>
-    
-    
-        </div>
-    
-        <div class="container">
-          <footer class="py-3 my-4">
-              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                  <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Inicio</a></li>
-                  <li class="nav-item"><a href="Servicios.html" class="nav-link px-2 text-white">Nuestros Servicios</a></li>
-                  <li class="nav-item"><a href="contacto.html" class="nav-link px-2 text-white">Contacto</a></li>
-    
-              </ul>
 
-            
-              <p class="text-center text-danger">&copy; Realizado por: Jordy, Kevin, Melany, Jonathan, Steeven</p>
+<div class="container p-4 pb-0">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <h5 class="text-uppercase text-danger">Mision</h5>
+      <p>
+      El propósito principal del periodismo es dar a los ciudadanos información veraz y oportuna para hacer valer sus derechos ante la sociedad, además, mayormente es utilizada por los medios de comunicación para transmitir noticias, opiniones o críticas que enriquezcan al público.
+      </p>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <h5 class="text-uppercase text-danger">Vision</h5>
+      <p>
+      Desarrollar e impulsar el periodismo para fortalecer y consolidar las comunicaciones sociales, que pongan en común las actividades, hechos, descubrimientos y acontecimientos de la humanidad para alcanzar mejores niveles de vida de los seres humanos y el ambiente que le rodea.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <footer class="pt-3 mt-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Inicio</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Nuestros Servicios</a></li>
+          <li class="nav-item"><a href="acerca_de.html" class="nav-link px-2 text-white">Contacto</a></li>
+      </ul>
+      <p class="text-center text-danger">&copy; Realizado por: Jordy, Kevin, Melany, Jonathan, Steeven</p>
+  </footer>
+</div>
     
 `;
 footer.classList.add("bg-dark", "text-center", "text-white");
@@ -123,13 +100,13 @@ document.body.appendChild(footer);
 
 console.log("a");
 function addLinkToNav(title, href) {
-    var newLink = document.createElement("li");
-    newLink.classList.add("to-gray-hover");
-    newLink.style.borderRadius = "15px"
-    var a = document.createElement("a");
-    a.classList.add("nav-link", "px-3", "text-white");
-    a.textContent = title;
-    a.href = href;
-    newLink.appendChild(a);
-    linksItems.appendChild(newLink);
+  var newLink = document.createElement("li");
+  newLink.classList.add("to-gray-hover");
+  newLink.style.borderRadius = "15px"
+  var a = document.createElement("a");
+  a.classList.add("nav-link", "px-3", "text-white");
+  a.textContent = title;
+  a.href = href;
+  newLink.appendChild(a);
+  linksItems.appendChild(newLink);
 }
