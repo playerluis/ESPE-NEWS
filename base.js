@@ -98,7 +98,7 @@ $(() => {
         .append(
             $("<footer>")
                 .css("border-radius", "25px")
-                .addClass("bg-dark text-center text-white")
+                .addClass("bg-dark text-center text-white fade-element")
                 .html(`
                     <div class="container p-4 pb-0">
                         <div class="row">
