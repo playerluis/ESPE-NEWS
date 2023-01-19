@@ -190,6 +190,26 @@ $(() => {
 
     });
 
+    let slideElementsInverse = $(".slide-element-inverse").css("position","relative");
+    slideElementsInverse.css("left" , "300px");
+    $(window).on("scroll", function() {
+        var posicionVentana = $(window).scrollTop();
+        for (let i = 0; i < slideElementsInverse.length; i++) {
+            const element = slideElementsInverse[i];
+            var posicionElemento = $(element).offset().top;
+            if (posicionVentana + $(window).height() > posicionElemento) {
+                $(element).animate({
+                    left: "0px"
+                }, 500);
+            } else {
+                $(element).finish().animate({
+                    left: "300px"
+                }, 200);;
+            }
+        }
+
+    });
+
     addLinkToNav("Inicio", "index.html");
     addLinkToNav("Noticias", "noticias.html");
     addLinkToNav("Seguridad", "seguridad.html");
