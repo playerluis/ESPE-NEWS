@@ -129,6 +129,24 @@ $(() => {
                 `)
         );
 
+    var size = $("#nav").height();
+    setInterval(function () {
+        if (size != $("#nav").height()) {
+            size = $("#nav").height();
+            $(document.body).css("margin-top", parseInt(1.5 * $("#nav").height()) + "px")
+        }
+    }, 10);
+
+    $(document).on("scroll", e => {
+        var scroll = $(e.target).scrollTop();
+        var threshold = $(e.target).height() * 0.2;
+        if (scroll > threshold) {
+            $("#nav").slideUp(500)
+        } else {
+            $("#nav").slideDown(500)
+        }
+    });
+
     addLinkToNav("Inicio", "index.html");
     addLinkToNav("Noticias", "noticias.html");
     addLinkToNav("Seguridad", "seguridad.html");
@@ -148,36 +166,18 @@ $(() => {
                         .attr("href", href)
                 ).on({
                     mouseenter: function () {
-                            $(this).animate({
-                                "font-size": "130%",
-                                "background-color": "rgb(100, 100, 100)"
-                            }, 250);
+                        $(this).animate({
+                            "font-size": "130%",
+                            "background-color": "rgb(100, 100, 100)"
+                        }, 250);
                     },
                     mouseleave: function () {
-                            $(this).animate({
-                                "font-size": "100%",
-                                "background-color": "rgb(33, 37, 41)"
-                            }, 250);
+                        $(this).animate({
+                            "font-size": "100%",
+                            "background-color": "rgb(33, 37, 41)"
+                        }, 250);
                     }
                 })
         );
-    }
-});
-
-var size = $("#nav").height();
-setInterval(function(){
-    if (size != $("#nav").height()) {
-        size = $("#nav").height();
-        $(document.body).css("margin-top", parseInt( 1.5 * $("#nav").height()) + "px")
-    }
-}, 10);
-
-$(document).on("scroll", e => {
-    var scroll = $(e.target).scrollTop();
-    var threshold = $(e.target).height() * 0.2;
-    if (scroll > threshold) {
-        $("#nav").slideUp(500)
-    } else {
-        $("#nav").slideDown(500)
     }
 });
