@@ -17,6 +17,7 @@ $().ready(() => {
 		})
 		.appendTo("head");
 
+    
 	$(document.body)
 		.addClass("nav_top")
 		.prepend(
