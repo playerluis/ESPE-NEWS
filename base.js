@@ -137,14 +137,37 @@ $(() => {
         }
     }, 10);
 
+    let anim = false; 
     $(document).on("scroll", e => {
         var scroll = $(e.target).scrollTop();
         var threshold = $(e.target).height() * 0.2;
-        if (scroll > threshold) {
-            $("#nav").slideUp(500)
-        } else {
-            $("#nav").slideDown(500)
+        if (scroll > threshold && !anim) {
+            anim = true;            
+            $("#nav").animate({
+                "top": "-150px"
+            }, 700, () => anim = false)
+        } else if (!anim) {
+            anim = true;
+            $("#nav").finish().animate({
+                "top": "0px"
+            }, 700, () => anim = false)
         }
+    });
+
+    
+    let fadeElements = $(".fade-element").hide();
+    $(window).on("scroll", function() {
+        var posicionVentana = $(window).scrollTop();
+        for (let i = 0; i < fadeElements.length; i++) {
+            const element = fadeElements[i];
+            var posicionElemento = $(element).offset().top;
+            if (posicionVentana + $(window).height() > posicionElemento) {
+                $(element).fadeIn(1000);
+            } else {
+                $(element).finish().hide();
+            }
+        }
+
     });
 
     addLinkToNav("Inicio", "index.html");
