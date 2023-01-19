@@ -24,12 +24,27 @@
 
         }
     </style>
+
+    <script>
+        $((e)=>{
+            $(".titulos").hover(function(){
+                $(this).css("color", "gray");
+                $(this).css("text-decoration", "underline");
+                $(this).css("cursor", "pointer");
+            },function(){
+                $(this).css("color", "black");
+                $(this).css("text-decoration", "none");
+                $(this).css("cursor", "default");
+            });
+        })
+        
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="fade-element col-xl-12 col-xs-12">
+            <div class="col-xl-12 col-xs-12">
                 <hr style="border:0px; border-top: 5px double #000;">
                 <h2 class="text-bg-dark text-center" id="demo">SEGURIDAD</h2>
                 <hr style="border:0px; border-top: 5px double #000;">
@@ -41,9 +56,9 @@
                     class="img-thumbnail">
             </div>
 
-            <div class="  col-xl-6 col-xs-6" style="text-align: justify;">
+            <div class=" col-xl-6 col-xs-6" style="text-align: justify;">
 
-                <h2>
+                <h2 class="titulos">
                     El 80% de la población penitenciaria ha sido censada
                 </h2>
 
@@ -73,14 +88,14 @@
         </div>
         <hr style="border:0px; border-top: 5px double #000;" >
         <div class="row">
-            <div class=" col-xl-6 col-xs-6">
+            <div class="col-xl-6 col-xs-6">
                 <img src="https://imagenes.expreso.ec/files/image_700_402/uploads/2022/11/29/638694aacc8f1.jpeg"
                     class="img-thumbnail">
             </div>
 
-            <div class=" col -6" style="text-align: justify;">
+            <div class="col -6" style="text-align: justify;">
 
-                <h2>
+                <h2 class="titulos">
                     La reestructuración en las UPC será un cerramiento
                 </h2>
 
@@ -106,14 +121,14 @@
         </div>
         <hr style="border:0px; border-top: 5px double #000;">
         <div class="row">
-            <div class="  col-xl-6 col-xs-6">
+            <div class="fade-element  col-xl-6 col-xs-6">
                 <img src="https://imagenes.expreso.ec/files/image_700_402/uploads/2022/11/29/63863841f1d7e.jpeg"
                     class="img-thumbnail">
             </div>
 
-            <div class=" fade-element col -6" style="text-align: justify;">
+            <div class="slide-element-inverse col -6" style="text-align: justify;">
 
-                <h2>
+                <h2 class="titulos">
                     El rol de Fuerzas Armadas en seguridad debe pasar por el filtro de la Asamblea Nacional, dictamina
                     la Corte Constitucional
                 </h2>
@@ -140,14 +155,14 @@
         <hr style="border:0px; border-top: 5px double #000;">
 
         <div class="row">
-            <div class="  col -6">
+            <div class="fade-element  col -6">
                 <img src="https://imagenes.expreso.ec/files/image_700_402/uploads/2022/11/28/6385543f5865e.jpeg"
                     class="img-thumbnail">
             </div>
 
-            <div class="col-xl-6 col-xs-6" style="text-align: justify;">
+            <div class="slide-element-inverse col-xl-6 col-xs-6" style="text-align: justify;">
 
-                <h2>
+                <h2 class="titulos">
                     El CNE instala mesa de seguridad para delinear detalles de cara a las elecciones del 5 de febrero
                 </h2>
 

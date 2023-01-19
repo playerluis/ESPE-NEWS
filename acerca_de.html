@@ -17,6 +17,34 @@
             color: hsl(0, 74%, 64%);
         }
     </style>
+    <script>
+        $(() => {
+            $(".btn").on(
+                {
+                    mouseenter: function () {
+                        $(this).animate({ transform: 0.5 },
+                            {
+                                duration: 300, easing: 'linear',
+                                step: function (now, fx) {
+                                    $(this).css('transform', 'scale(' + (1 + now) + ')')
+                                }
+                            })
+    
+                    },
+                    mouseleave: function () {
+                        $(this).finish().animate({ transform: 0.5 },
+                            {
+                                duration: 300, easing: 'linear',
+                                step: function (now, fx) {
+                                    $(this).css('transform', 'scale(' + (1.5 - now) + ')')
+                                }
+                            })
+    
+                    }
+                }
+            )
+        })
+    </script>
 </head>
 
 <body>
