@@ -1,6 +1,6 @@
 
 
-$().ready(() => {
+$(() => {
 	$("<link>")
 		.attr({
 			rel: "stylesheet",
@@ -17,9 +17,9 @@ $().ready(() => {
 		})
 		.appendTo("head");
 
-    
+
 	$(document.body)
-		.addClass("nav_top")
+		.addClass("nav_top") 
 		.prepend(
 			$("<header>")
 				.addClass("mx-1 mt-1 p-3 bg-dark text-white fixed-top")
