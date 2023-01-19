@@ -103,13 +103,13 @@ $(() => {
                     <div class="container p-4 pb-0">
                         <div class="row">
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                            <h5 class="text-uppercase text-danger">Mision</h5>
+                            <h5 class="text-uppercase text-danger">Misión</h5>
                             <p>
                             El propósito principal del periodismo es dar a los ciudadanos información veraz y oportuna para hacer valer sus derechos ante la sociedad, además, mayormente es utilizada por los medios de comunicación para transmitir noticias, opiniones o críticas que enriquezcan al público.
                             </p>
                         </div>
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                            <h5 class="text-uppercase text-danger">Vision</h5>
+                            <h5 class="text-uppercase text-danger">Visión</h5>
                             <p>
                             Desarrollar e impulsar el periodismo para fortalecer y consolidar las comunicaciones sociales, que pongan en común las actividades, hechos, descubrimientos y acontecimientos de la humanidad para alcanzar mejores niveles de vida de los seres humanos y el ambiente que le rodea.
                             </p>
@@ -193,7 +193,7 @@ $(() => {
     addLinkToNav("Inicio", "index.html");
     addLinkToNav("Noticias", "noticias.html");
     addLinkToNav("Seguridad", "seguridad.html");
-    addLinkToNav("Politica", "politica.html");
+    addLinkToNav("Política", "politica.html");
     addLinkToNav("Deportes", "deportes.html");
     addLinkToNav("Acerca de", "acerca_de.html");
 

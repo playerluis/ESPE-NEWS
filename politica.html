@@ -10,6 +10,12 @@
     <script src="node_modules/jquery-color/dist/jquery.color.min.js"></script>
     <title>Política</title>
 
+    <style>
+        p {
+            font-size: 20px;
+        }
+    </style>
+
     <script>
         $(document).ready(function(){
             $("#op").hover(function(){
@@ -28,6 +34,16 @@
                 $(this).css("text-decoration", "none");
                 $(this).css("cursor", "default");
             });
+
+            $(".titulos").hover(function(){
+                $(this).css("color", "gray");
+                $(this).css("text-decoration", "underline");
+                $(this).css("cursor", "pointer");
+            },function(){
+                $(this).css("color", "black");
+                $(this).css("text-decoration", "none");
+                $(this).css("cursor", "default");
+            });
             
         });
     </script>
@@ -37,23 +53,24 @@
     <div class="container my-5">
         <div class="row">
             <hr style="border:0px; border-top: 5px double #000;">
-            <h2 class="text-bg-dark text-center" id="demo">TENDENCIAS POLÍTICAS.</h2>
+            <h2 class="text-bg-dark text-center" id="demo">TENDENCIAS POLÍTICAS</h2>
             <hr style="border:0px; border-top: 5px double #000;">
 
             <div class="col-8">
                 <img id="op" class="w-100" src="https://media.primicias.ec/2022/11/28194234/28-jorge-glas-salida-carcel-1024x574.jpg" alt="">
-                <h1 id="titulo" style="text-align: justify;">Política Gobierno y Procuraduría piden la revocatoria de la libertad de Glas</h1>
+                <br>
+                <h2 id="titulo" style="text-align: justify;">Política Gobierno y Procuraduría piden la revocatoria de la libertad de Glas</h2>
                 <p>SNAI y la Procuraduría presentaron escritos para que se revoque la medida cautelar que favoreció al exvicepresidente Jorge Glas.</p>
             </div>
             <div class="col-4">
                 <div class="row">
                     <div class="col-12" style="text-align: justify;">
-                        <h2>Rehabilitación del edificio de Contraloría costó USD 22,2 millones</h2>
+                        <h2 class="titulos">Rehabilitación del edificio de Contraloría costó USD 22,2 millones</h2>
                         <p>El edificio matriz de Contraloría fue incendiado por manifestantes durante el paro de 2019. USD 12,1 millones fueron cubiertos por la aseguradora.</p>
                     </div>
                     <br>
                     <div class="col-12" style="text-align: justify;">
-                        <h2>Corte avala consulta para que Sevilla Don Bosco sea cantón</h2>
+                        <h2 class="titulos">Corte avala consulta para que Sevilla Don Bosco sea cantón</h2>
                         <p>Según la Corte Constitucional, la propuesta de consulta popular para que Sevilla Don Bosco se convierta en cantón, cumple con los parámetros.</p>
                     </div>
                 </div>
@@ -63,7 +80,7 @@
             <div class="col-9">
                 <div class="row">
                     <div class="col-8 slide-element" style="text-align: justify;">
-                        <h3>Iza pregunta a Jiménez: “¿Nos está amenazando Ministro?”</h3>
+                        <h3 class="titulos">Iza pregunta a Jiménez: “¿Nos está amenazando Ministro?”</h3>
                         <p>Dirigentes de la Conaie, Feine y Fenocin advirtieron que el Gobierno no debe provocarles y debe cumplir acuerdos. Gobierno dice que está cumpliendo.</p>
                     </div>
                     <div class="col-4">
@@ -73,7 +90,7 @@
                 <br class="mt-2">
                 <div class="row">
                     <div class="col-8 slide-element" style="text-align: justify;">
-                        <h3>Ecuador abordará con Perú y Colombia seguridad en fronteras</h3>
+                        <h3 class="titulos">Ecuador abordará con Perú y Colombia seguridad en fronteras</h3>
                         <p>El canciller Juan Carlos Holguín confirmó la visita a Ecuador, del secretario de Seguridad Nacional de Estados Unidos.</p>
                     </div>
                     <div class="col-4">
@@ -83,7 +100,7 @@
                 <br class="mt-2">
                 <div class="row">
                     <div class="col-8 slide-element" style="text-align: justify;">
-                        <h3>López Obrador viajará a Perú para cumbre de Alianza del Pacífico</h3>
+                        <h3 class="titulos">López Obrador viajará a Perú para cumbre de Alianza del Pacífico</h3>
                         <p>El presidente mexicano López Obrador anunció fecha para entregar en Perú, la presidencia temporal del organismo a su par, Pedro Castillo.</p>
                     </div>
                     <div class="col-4">
@@ -93,7 +110,7 @@
                 <br class="mt-2">
                 <div class="row">
                     <div class="col-8 slide-element" style="text-align: justify;">
-                        <h3>Ministerio del Interior recaudará tasas por migración desde diciembre</h3>
+                        <h3 class="titulos">Ministerio del Interior recaudará tasas por migración desde diciembre</h3>
                         <p>Además de migración, se incluye el cobro de servicios de seguridad privada y sustancias catalogadas a fiscalización.</p>
                     </div>
                     <div class="col-4">
@@ -103,7 +120,7 @@
                 <br class="mt-2">
                 <div class="row">
                     <div class="col-8 slide-element" style="text-align: justify;">
-                        <h3>El presidente Lasso convoca a un referendo con ocho preguntas</h3>
+                        <h3 class="titulos">El presidente Lasso convoca a un referendo con ocho preguntas</h3>
                         <p>El Consejo Nacional Electoral (CNE) tiene un plazo máximo de 15 días para convocar a elecciones y otros 60 días para ejecutar la votación.</p>
                     </div>
                     <div class="col-4">
@@ -115,10 +132,10 @@
                 <ol>
                     <h3><li>Jorge Glas salió de la Cárcel 4 tras obtención de medida cautelar</li></h3>
                     <h3><li>Tensión en la Corte entre la Fiscal y Pablo Celi por caso Las Torres</li></h3>
-                    <h3><li><h3>Uno de los nuevos vocales del Cpccs tiene orden de captura</li></h3>
-                    <h3><li><h3>La división entre Pachakutik y la Conaie se hace más profunda</li></h3>
-                    <h3><li><h3>EE. UU. espera pico de migración irregular tras el fin de la expulsión inmediata</li></h3>
-                    <h3><li><h3>Jueza dispone reintegro de Fernando Villavicencio a la Asamblea</li></h3>
+                    <h3><li>Uno de los nuevos vocales del Cpccs tiene orden de captura</li></h3>
+                    <h3><li>La división entre Pachakutik y la Conaie se hace más profunda</li></h3>
+                    <h3><li>EE. UU. espera pico de migración irregular tras el fin de la expulsión inmediata</li></h3>
+                    <h3><li>Jueza dispone reintegro de Fernando Villavicencio a la Asamblea</li></h3>
 
                 </ol>
             </div>
