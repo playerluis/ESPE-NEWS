@@ -148,22 +148,16 @@ $(() => {
                         .attr("href", href)
                 ).on({
                     mouseenter: function () {
-                        try {
                             $(this).animate({
                                 "font-size": "130%",
                                 "background-color": "rgb(100, 100, 100)"
                             }, 250);
-                        } catch (error) {
-                        }
                     },
                     mouseleave: function () {
-                        try {
                             $(this).animate({
                                 "font-size": "100%",
                                 "background-color": "rgb(33, 37, 41)"
                             }, 250);
-                        } catch (error) {                            
-                        }
                     }
                 })
         );
@@ -177,7 +171,6 @@ setInterval(function(){
         $(document.body).css("margin-top", parseInt( 1.5 * $("#nav").height()) + "px")
     }
 }, 10);
-
 
 $(document).on("scroll", e => {
     var scroll = $(e.target).scrollTop();
