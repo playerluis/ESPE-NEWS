@@ -104,13 +104,13 @@ $(() => {
                         <div class="row">
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                             <h5 class="text-uppercase text-danger">Misión</h5>
-                            <p>
+                            <p style="text-align: justify;">
                             El propósito principal del periodismo es dar a los ciudadanos información veraz y oportuna para hacer valer sus derechos ante la sociedad, además, mayormente es utilizada por los medios de comunicación para transmitir noticias, opiniones o críticas que enriquezcan al público.
                             </p>
                         </div>
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                             <h5 class="text-uppercase text-danger">Visión</h5>
-                            <p>
+                            <p style="text-align: justify;">
                             Desarrollar e impulsar el periodismo para fortalecer y consolidar las comunicaciones sociales, que pongan en común las actividades, hechos, descubrimientos y acontecimientos de la humanidad para alcanzar mejores niveles de vida de los seres humanos y el ambiente que le rodea.
                             </p>
                         </div>
@@ -123,7 +123,7 @@ $(() => {
                                 <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Nuestros Servicios</a></li>
                                 <li class="nav-item"><a href="acerca_de.html" class="nav-link px-2 text-white">Contacto</a></li>
                             </ul>
-                            <p class="text-center text-danger">&copy; Realizado por: Jordy, Kevin, Melany, Jonathan, Steeven</p>
+                            <p class="text-center text-danger">&copy; Realizado por: Luis, Jordy, Kevin, Melany, Jonathan, Steeven</p>
                         </footer>
                     </div>
                 `)
