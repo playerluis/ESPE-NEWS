@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <title>Acerca de</title>
     <style>
-        label.error{
+        label.error {
             color: hsl(0, 74%, 64%);
         }
     </style>
@@ -65,11 +65,13 @@
                             <div class="row form-group">
                                 <div class="col-md-6 mb-3 mb-md-0" style="padding: 5px; color: white;">
                                     <label class="font-weight-bold" for="fname">Nombre</label>
-                                    <input type="text" id="fname" name="fname" class="form-control" placeholder="Nombre">
+                                    <input type="text" id="fname" name="fname" class="form-control"
+                                        placeholder="Nombre">
                                 </div>
                                 <div class="col-md-6" style="padding: 5px; color: white;">
                                     <label class="font-weight-bold" for="lname">Apellido</label>
-                                    <input type="text" id="lname" name="lname" class="form-control" placeholder="Apellido">
+                                    <input type="text" id="lname" name="lname" class="form-control"
+                                        placeholder="Apellido">
                                 </div>
                             </div>
 
@@ -81,7 +83,8 @@
                                 </div>
                                 <div class="col-md-6" style="padding: 5px; color: white;">
                                     <label class="font-weight-bold" for="email">Correo Electronico</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="Correo">
+                                    <input type="email" id="email" name="email" class="form-control"
+                                        placeholder="Correo">
                                 </div>
                             </div>
 
@@ -136,7 +139,7 @@
                     lettersonly: true
                 },
 
-                cell:{
+                cell: {
                     required: true,
                     minlength: 10,
                     maxlength: 10
@@ -197,18 +200,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $note = $_POST['note'];
         $datos['note'] = $note;
     }
+
+    // Concatenar los datos en una cadena de texto
+    $datos = "Nombre: $fname\nApellido: $lname\nTelefono: $cell\nCorreo Electronico: $email\nMensaje: $note\n\n";
+
+    // Abrir el archivo de texto plano
+    $archivo = fopen("datosPrueba.txt", "a");
+
+    // Escribir los datos en el archivo de texto plano
+    fwrite($archivo, $datos);
+
+    // Cerrar el archivo
+    fclose($archivo);
 }
-
-// Concatenar los datos en una cadena de texto
-$datos = "Nombre: $fname\nApellido: $lname\nTelefono: $cell\nCorreo Electronico: $email\nMensaje: $note\n\n";
-
-// Abrir el archivo de texto plano
-$archivo = fopen("datosPrueba.txt", "a");
-
-// Escribir los datos en el archivo de texto plano
-fwrite($archivo, $datos);
-
-// Cerrar el archivo
-fclose($archivo);
-
 ?>

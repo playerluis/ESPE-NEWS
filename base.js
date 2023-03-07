@@ -209,7 +209,7 @@ $(() => {
     addLinkToNav("Inicio", "index.php");
     addLinkToNav("Noticias", "noticias.php");
     addLinkToNav("Seguridad", "seguridad.html");
-    addLinkToNav("Política", "politica.html");
+    addLinkToNav("Política", "politica.php");
     addLinkToNav("Deportes", "deportes.php");
     addLinkToNav("Acerca de", "acerca_de.php");
 
