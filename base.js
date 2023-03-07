@@ -1,5 +1,3 @@
-
-
 $(() => {
 
     $("<link>")
@@ -21,85 +19,83 @@ $(() => {
         .addClass("nav_top")
         .prepend(
             $("<header>")
-                .attr("id", "nav")
-                .addClass("mx-1 mt-1 p-3 bg-dark text-white fixed-top")
-                .css("border-radius", "20px")
-                .append(
+            .attr("id", "nav")
+            .addClass("mx-1 mt-1 p-3 bg-dark text-white fixed-top")
+            .css("border-radius", "20px")
+            .append(
+                $("<div>")
+                .addClass("container")
+                .append([
                     $("<div>")
-                        .addClass("container")
-                        .append([
-                            $("<div>")
-                                .addClass(
-                                    "d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-                                )
-                                .append([
-                                    $("<a>")
-                                        .addClass(
-                                            "d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-                                        )
-                                        .attr("href", "index.html")
-                                        .append(
-                                            $("<img>")
-                                                .attr({
-                                                    src: "resources/Logo_ESPE.png",
-                                                    alt: "ESPE-NEWS",
-                                                })
-                                                .css("width", "90px").on({
-                                                    mouseenter: function () {
-                                                        $(this).animate({
-                                                            "width": "100px"
-                                                        }, 250);
-                                                    },
-                                                    mouseleave: function () {
-                                                        $(this).animate({
-                                                            "width": "90px"
-                                                        }, 250);
-                                                    }
-                                                })
-                                        ),
+                    .addClass(
+                        "d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+                    )
+                    .append([
+                        $("<a>")
+                        .addClass(
+                            "d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+                        )
+                        .attr("href", "index.html")
+                        .append(
+                            $("<img>")
+                            .attr({
+                                src: "resources/Logo_ESPE.png",
+                                alt: "ESPE-NEWS",
+                            })
+                            .css("width", "90px").on({
+                                mouseenter: function() {
+                                    $(this).animate({
+                                        "width": "100px"
+                                    }, 250);
+                                },
+                                mouseleave: function() {
+                                    $(this).animate({
+                                        "width": "90px"
+                                    }, 250);
+                                }
+                            })
+                        ),
 
-                                    $("<ul>")
-                                        .attr("id", "list-links")
-                                        .addClass(
-                                            "nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-                                        ),
+                        $("<ul>")
+                        .attr("id", "list-links")
+                        .addClass(
+                            "nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+                        ),
 
-                                    $("<form>")
-                                        .addClass(
-                                            "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
-                                        )
-                                        .append(
-                                            $("<input>")
-                                                .addClass(
-                                                    "form-control text-bg-dark"
-                                                )
-                                                .attr({
-                                                    type: "search",
-                                                    placeholder:
-                                                        "Buscar...",
-                                                    ariaLabel:
-                                                        "Search",
-                                                })
-                                        ),
+                        $("<form>")
+                        .addClass(
+                            "col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+                        )
+                        .append(
+                            $("<input>")
+                            .addClass(
+                                "form-control text-bg-dark"
+                            )
+                            .attr({
+                                type: "search",
+                                placeholder: "Buscar...",
+                                ariaLabel: "Search",
+                            })
+                        ),
 
-                                    $("<div>")
-                                        .addClass("text-end")
-                                        .append(
-                                            $("<button>")
-                                                .addClass(
-                                                    "btn btn-outline-light me-2"
-                                                )
-                                                .text("BUSCAR")
-                                        ),
-                                ]),
-                        ])
-                )
+                        $("<div>")
+                        .addClass("text-end")
+                        .append(
+                            $("<button>")
+                            .addClass(
+                                "btn btn-outline-light me-2"
+                            )
+                            .text("BUSCAR")
+                        ),
+                    ]),
+                ])
+            )
         )
         .append(
             $("<footer>")
-                .css("border-radius", "25px")
-                .addClass("bg-dark text-center text-white fade-element")
-                .html(`
+            .css("border-radius", "25px")
+            .addClass("bg-dark text-center text-white fade-element")
+            .html(`
                     <div class="container p-4 pb-0">
                         <div class="row">
                         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
@@ -130,19 +126,19 @@ $(() => {
         );
 
     var size = $("#nav").height();
-    setInterval(function () {
+    setInterval(function() {
         if (size != $("#nav").height()) {
             size = $("#nav").height();
             $(document.body).css("margin-top", parseInt(1.5 * $("#nav").height()) + "px")
         }
     }, 10);
 
-    let anim = false; 
+    let anim = false;
     $(document).on("scroll", e => {
         var scroll = $(e.target).scrollTop();
         var threshold = $(e.target).height() * 0.2;
         if (scroll > threshold && !anim) {
-            anim = true;            
+            anim = true;
             $("#nav").animate({
                 "top": "-150px"
             }, 700, () => anim = false)
@@ -154,7 +150,7 @@ $(() => {
         }
     });
 
-    
+
     let fadeElements = $(".fade-element").hide();
     $(window).on("scroll", function() {
         var posicionVentana = $(window).scrollTop();
@@ -170,8 +166,8 @@ $(() => {
 
     });
 
-    let slideElements = $(".slide-element").css("position","relative");
-    slideElements.css("left" , "-300px");
+    let slideElements = $(".slide-element").css("position", "relative");
+    slideElements.css("left", "-300px");
     $(window).on("scroll", function() {
         var posicionVentana = $(window).scrollTop();
         for (let i = 0; i < slideElements.length; i++) {
@@ -190,8 +186,8 @@ $(() => {
 
     });
 
-    let slideElementsInverse = $(".slide-element-inverse").css("position","relative");
-    slideElementsInverse.css("left" , "300px");
+    let slideElementsInverse = $(".slide-element-inverse").css("position", "relative");
+    slideElementsInverse.css("left", "300px");
     $(window).on("scroll", function() {
         var posicionVentana = $(window).scrollTop();
         for (let i = 0; i < slideElementsInverse.length; i++) {
@@ -220,27 +216,42 @@ $(() => {
     function addLinkToNav(title, href) {
         $("#list-links").append(
             $("<li>")
-                .addClass("mx-1")
-                .css("border-radius", "15px")
-                .append(
-                    $("<a>")
-                        .addClass("nav-link px-3 text-white")
-                        .text(title)
-                        .attr("href", href)
-                ).on({
-                    mouseenter: function () {
-                        $(this).animate({
-                            "font-size": "130%",
-                            "background-color": "rgb(100, 100, 100)"
-                        }, 250);
-                    },
-                    mouseleave: function () {
-                        $(this).animate({
-                            "font-size": "100%",
-                            "background-color": "rgb(33, 37, 41)"
-                        }, 250);
-                    }
-                })
+            .addClass("mx-1")
+            .css("border-radius", "15px")
+            .append(
+                $("<a>")
+                .addClass("nav-link px-3 text-white")
+                .text(title)
+                .attr("href", href)
+            ).on({
+                mouseenter: function() {
+                    $(this).animate({
+                        "font-size": "130%",
+                        "background-color": "rgb(100, 100, 100)"
+                    }, 250);
+                },
+                mouseleave: function() {
+                    $(this).animate({
+                        "font-size": "100%",
+                        "background-color": "rgb(33, 37, 41)"
+                    }, 250);
+                }
+            })
         );
     }
+});
+var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+    overlay = document.getElementById('overlay'),
+    popup = document.getElementById('popup'),
+    btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+
+btnAbrirPopup.addEventListener('click', function() {
+    overlay.classList.add('active');
+    popup.classList.add('active');
+});
+
+btnCerrarPopup.addEventListener('click', function(e) {
+    e.preventDefault();
+    overlay.classList.remove('active');
+    popup.classList.remove('active');
 });

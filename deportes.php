@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +9,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="estilos.css">
     <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
     <script src="node_modules/jquery-color/dist/jquery.color.min.js"></script>
+    
     <title>Deportes</title>
+
 </head>
+<style>
+ .text{
+    color:white;
+    font-family: Arial, sans-serif;
+    font-size: 25px; /* Cambiar el tamaño de fuente a 16px */
+  font-weight: bold; /* Cambiar la negrita del texto */
+  line-height: 1.5; /* Cambiar la altura de línea a 1.5 veces el tamaño de fuente */
+  display: inline-block;
+  transition: transform 0.3s ease-in-out; 
+}
+
+ 
+
+
+.text:hover {
+  transform: scale(1.2);
+}
+
+
+</style>
+
 <script>
     $(() => {
         $(".btn").on(
@@ -37,6 +66,21 @@
             }
         )
     })
+    var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
+	overlay = document.getElementById('overlay'),
+	popup = document.getElementById('popup'),
+	btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+
+btnAbrirPopup.addEventListener('click', function(){
+	overlay.classList.add('active');
+	popup.classList.add('active');
+});
+
+btnCerrarPopup.addEventListener('click', function(e){
+	e.preventDefault();
+	overlay.classList.remove('active');
+	popup.classList.remove('active');
+});
 </script>
 
 <body>
@@ -61,7 +105,7 @@
                                 class="mx-auto d-block fade-element" style="width:100%">
                         </div>
                         <br>
-                        <h6 style="text-align: justify;">¡Canta y no llores! México, eliminado del Mundial 2022 pese a vencer 2-1 a Arabia Saudita
+                        <h6 style="text-align: justify;">¡Canta y no llores! México, eliminado del Mundial 2022 pese a vencer 2-1 a Arabia
                         </h6>
                         <p style="text-align: justify;">La victoria del equipo de Gerardo Martino acabó siendo insuficiente por el lastre de la mayor
                             sequía goleadora.</p>
@@ -79,9 +123,9 @@
                                 class="mx-auto d-block fade-element" style="width:100%">
                         </div>
                         <br>
-                        <h6 style="text-align: justify;">Borró a Polonia y volvió a ser Argentina</h6>
+                        <h6 style="text-align: justify;">Borró a Polonia y volvió a ser Argentina eliminado del Mundial 2022 </h6>
                         <p style="text-align: justify;">El promocionado duelo Messi-Lewandowski, azuzado por declaraciones fuertes del polaco en
-                            ocasión del Balón de Oro, no tuvo lugar.</p>
+                            ocasión del Balón de Oro, no tuvo lugar como uno de los mejores.</p>
                         <button type="button" class="btn btn-primary"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                             Más información
@@ -179,7 +223,7 @@
                         </div>
                         <br>
                         <h6 style="text-align: justify;">Lionel Messi, el futbolista de Argentina con más partidos disputados en la historia de la
-                            Copa del Mundo</h6>
+                            Copa</h6>
                         <p style="text-align: justify;">Messi es el único argentino en jugar cinco Mundiales y situarse en el selecto grupo que están
                             Lothar Matthäus.</p>
                         <button type="button" class="btn btn-primary"
@@ -223,12 +267,45 @@
                         <br>
                         <br>
 
+
+                     
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+         
+              
+   <div class="contenedor responsive-image" style="background-image: url(ds.png); heigth:100px;" >
+        <article>
+        <br>
+       
+               <h2 class="text">"ENTERATE DE TODAS LAS NOTICIAS DEL FUTBOL"</h2>
+                <br>
+       
+      
+            <button id="btn-abrir-popup" class="btn-abrir-popup">! Suscribete !</button>
 
+        </article>
+
+        <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                <h3>SUSCRIBETE</h3>
+                <h4>"Dia a dia con el deporte"</h4>
+                <form action="">
+                    <div class="contenedor-inputs">
+                        <input type="text" placeholder="Nombre">
+                        <input type="email" placeholder="Correo">
+                    </div>
+                    <input type="submit" class="btn-submit" value="REGISTRARME">
+                </form>
+            </div>
+        </div>
+
+            </div>
+
+            
+    </div>
 
 </body>
 <script src="base.js"></script>
