@@ -292,14 +292,36 @@ btnCerrarPopup.addEventListener('click', function(e){
                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                 <h3>SUSCRIBETE</h3>
                 <h4>"Dia a dia con el deporte"</h4>
-                <form action="">
-                    <div class="contenedor-inputs">
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="Correo">
-                    </div>
-                    <input type="submit" class="btn-submit" value="REGISTRARME">
-                </form>
+
+
+                <form action="guardar_datos.php" method="POST">
+
+                <div class="contenedor-inputs">
+                <label>Nombre:</label>
+		<input type="text" name="nombre"><br><br>
+		<label>Correo:</label>
+		<input type="email" name="correo"><br><br>
+
+                </div>
+		
+                <input type="submit" class="btn-submit" value="REGISTRARME">
+	</form>
+
+    <?php
+		if (isset($_GET['guardado'])) {
+			$nombre = $_GET['nombre'];
+			$correo = $_GET['correo'];
+			echo "<script>alert('¡REGISTRO EXITOSO! ✔️.\\n\\nHola ".$nombre."\\nHaz sido Registado Correctamente.');</script>";
+		}
+	?>
+
+
+
+
             </div>
+
+
+
         </div>
 
             </div>
