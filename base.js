@@ -206,12 +206,12 @@ $(() => {
 
     });
 
-    addLinkToNav("Inicio", "index.html");
-    addLinkToNav("Noticias", "noticias.html");
+    addLinkToNav("Inicio", "index.php");
+    addLinkToNav("Noticias", "noticias.php");
     addLinkToNav("Seguridad", "seguridad.html");
     addLinkToNav("Política", "politica.html");
-    addLinkToNav("Deportes", "deportes.html");
-    addLinkToNav("Acerca de", "acerca_de.html");
+    addLinkToNav("Deportes", "deportes.php");
+    addLinkToNav("Acerca de", "acerca_de.php");
 
     function addLinkToNav(title, href) {
         $("#list-links").append(
