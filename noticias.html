@@ -11,30 +11,30 @@
     <script src="node_modules/jquery-color/dist/jquery.color.min.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $("#tarjeta").hover(function(){
-                $(this).animate({opacity: '0.45'});
-            },function(){
+        $(document).ready(function () {
+            $("#tarjeta").hover(function () {
+                $(this).animate({ opacity: '0.45' });
+            }, function () {
                 $(this).stop().animate(
-                    {opacity: '1'});
+                    { opacity: '1' });
             });
-            $(document).ready(function(){
-            $("#tarjeta2").hover(function(){
-                $(this).animate({opacity: '0.45'});
-            },function(){
-                $(this).stop().animate(
-                    {opacity: '1'});
-            });
-            $(document).ready(function(){
-            $("#tarjeta3").hover(function(){
-                $(this).animate({opacity: '0.45'});
-            },function(){
-                $(this).stop().animate(
-                    {opacity: '1'});
+            $(document).ready(function () {
+                $("#tarjeta2").hover(function () {
+                    $(this).animate({ opacity: '0.45' });
+                }, function () {
+                    $(this).stop().animate(
+                        { opacity: '1' });
+                });
+                $(document).ready(function () {
+                    $("#tarjeta3").hover(function () {
+                        $(this).animate({ opacity: '0.45' });
+                    }, function () {
+                        $(this).stop().animate(
+                            { opacity: '1' });
+                    });
+                });
             });
         });
-    });
-});
     </script>
 
 </head>
@@ -101,7 +101,8 @@
                 <div class="fade-element col-md-4" style="padding: 20px">
                     <!--Clase de la tarjeta modificada en el centrado del texto y el background de la tarjeta-->
                     <div class="card text-center text-bg-primary mb-3" style="width: 18rem">
-                        <img id="tarjeta" src="https://www.elcomercio.com/wp-content/uploads/2021/12/fiestas-700x391.jpg"
+                        <img id="tarjeta"
+                            src="https://www.elcomercio.com/wp-content/uploads/2021/12/fiestas-700x391.jpg"
                             class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Fiestas de Quito: más de 190.000 personas se espera que asistan a los
@@ -115,8 +116,8 @@
                 </div>
                 <div class="fade-element col-md-4" style="padding: 20px">
                     <div class="card text-center text-bg-danger mb-3" style="width: 18rem">
-                        <img id="tarjeta2" src="http://hee.gob.ec/wp-content/uploads/2022/06/tabaco2.jpeg" class="card-img-top"
-                            alt="..." />
+                        <img id="tarjeta2" src="http://hee.gob.ec/wp-content/uploads/2022/06/tabaco2.jpeg"
+                            class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Día mundial sin tabaco
                             </h5>
@@ -131,7 +132,8 @@
                 </div>
                 <div class="fade-element col-md-4" style="padding: 20px">
                     <div class="card text-center text-bg-dark" style="width: 18rem">
-                        <img id="tarjeta3" src="https://www.eluniverso.com/resizer/VogwUunK6aWCDWf8wvCjDeauCNY=/1482x1005/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/XJDC347M2THMZBM6YIPQKW6H74.jpg"
+                        <img id="tarjeta3"
+                            src="https://www.eluniverso.com/resizer/VogwUunK6aWCDWf8wvCjDeauCNY=/1482x1005/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/XJDC347M2THMZBM6YIPQKW6H74.jpg"
                             class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h6 class="card-title">Pronóstico del tiempo para la mañana y tarde de este jueves 1 de
@@ -146,8 +148,54 @@
                 </div>
             </div>
         </div>
+
+        <!--Bloque de Texto-->
+        <hr style="border:0px; border-top: 5px double #000;">
+        <h2 class="text-bg-dark text-center" id="demo">PREGUNTAS 🤔</h2>
+        <hr style="border:0px; border-top: 5px double #000;">
+
+        <form id="form-noticias" method="post" action="datos_not.php" onsubmit="return mostrarAlerta()">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                <label for="nombre">Nombre y Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="name@gmail.com">
+                <label for="correo">Correo</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="noticia" name="noticia" style="height: 100px"></textarea>
+                <label for="noticia">Si tienes alguna noticia háznoslo saber aquí.</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="comentarios" name="comentarios" style="height: 100px"></textarea>
+                <label for="comentarios">Déjanos tus comentarios para mejorar el sitio web.</label>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-secondary" type="submit">Enviar</button>
+            </div>
+        </form><br><br>
     </div>
 </body>
+<script>
+    function mostrarAlerta() {
+        // Obtener valores de los campos
+        var nombre = document.getElementById("nombre").value.trim();
+        var correo = document.getElementById("correo").value.trim();
+        var noticia = document.getElementById("noticia").value.trim();
+        var comentarios = document.getElementById("comentarios").value.trim();
+
+        // Verificar si los campos tienen contenido
+        if (nombre == "" || correo == "" || noticia == ""|| comentarios == "") {
+            alert("Por favor, complete todos los campos. ⚠️");
+            return false; // Cancelar el envío del formulario
+        }
+
+        // Si los campos tienen contenido, permitir el envío del formulario
+        alert("Los datos se han enviado correctamente. ✅");
+        return true;
+    }
+</script>
 <script src="base.js"></script>
 
 </html>
