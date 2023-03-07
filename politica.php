@@ -1,3 +1,26 @@
+<?php
+if (isset($_GET['submit'])) {
+    if (!empty($_GET['nombres']) && !empty($_GET['tema'])) {
+
+        $nombre = $_GET['nombres'];
+        $tema = $_GET['tema'];
+
+        $registro = fopen('Registros/solicitudes.txt', 'a');
+        fwrite($registro, "Nombre: " . $nombre . "\n");
+        fwrite($registro, "Tema: " . $tema . "\n");
+        fclose($registro);
+
+        $_POST['nombres'] = '';
+        $_POST['tema'] = '';
+
+        echo "<script>alert('La solicitud se realizó con éxito.')</script>";
+
+    } else {
+
+        echo "<script>alert('Por favor, llene todos los campos antes de enviar el formulario.')</script>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,6 +169,17 @@
                 </ol>
             </div>
         </div>
+        <h1 class="mt-4 text-center">Dinos de que temas quieres que hablemos!</h1>
+        <form action="" method="get">
+            <label for="nombres">Nombres:</label>
+            <input type="text" name="nombres" id="nombres" class="form-control w-100"><br>
+
+            <label for="apellidos">Tema:</label>
+            <textarea name="tema" id="tema" cols="30" rows="10" class="form-control w-100"></textarea>
+
+            <input type="submit" name="submit" value="Enviar" class="btn btn-primary mt-4">
+        </form>
+
     </div>
 </body>
 <script src="base.js"></script>
