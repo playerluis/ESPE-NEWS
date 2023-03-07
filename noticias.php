@@ -1,3 +1,37 @@
+<?php
+// Verifica si se ha enviado el formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica si se han llenado todos los campos
+    if (!empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['noticia']) && !empty($_POST['comentarios'])) {
+        // Obtiene los datos del formulario
+        $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
+        $noticia = $_POST['noticia'];
+        $comentarios = $_POST['comentarios'];
+
+        // Crea el archivo en la carpeta noticias y guarda los datos
+        $archivo = fopen('Registros/noticias.txt', 'a');
+        fwrite($archivo, "Nombre: " . $nombre . "\n");
+        fwrite($archivo, "Correo: " . $correo . "\n");
+        fwrite($archivo, "Noticia: " . $noticia . "\n");
+        fwrite($archivo, "Comentarios: " . $comentarios . "\n\n");
+        fclose($archivo);
+
+        // Limpia los campos
+        $_POST['nombre'] = '';
+        $_POST['correo'] = '';
+        $_POST['noticia'] = '';
+        $_POST['comentarios'] = '';
+
+        // Muestra una alerta de éxito
+        echo "<script>alert('Los datos se han guardado correctamente.')</script>";
+    } else {
+        // Muestra una alerta de error si no se han llenado todos los campos
+        echo "<script>alert('Por favor, llene todos los campos antes de enviar el formulario.')</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,13 +182,14 @@
                 </div>
             </div>
         </div>
-
+        
         <!--Bloque de Texto-->
         <hr style="border:0px; border-top: 5px double #000;">
         <h2 class="text-bg-dark text-center" id="demo">PREGUNTAS 🤔</h2>
         <hr style="border:0px; border-top: 5px double #000;">
 
-        <form id="form-noticias" method="post" action="datos_not.php" onsubmit="return mostrarAlerta()">
+        <!--Formulario-->
+        <form id="form-noticias" method="POST" action="" onsubmit="return mostrarAlerta()">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 <label for="nombre">Nombre y Apellido</label>
@@ -178,6 +213,7 @@
     </div>
 </body>
 <script>
+    //Función para mostrar alerta al enviar el formulario
     function mostrarAlerta() {
         // Obtener valores de los campos
         var nombre = document.getElementById("nombre").value.trim();
@@ -186,7 +222,7 @@
         var comentarios = document.getElementById("comentarios").value.trim();
 
         // Verificar si los campos tienen contenido
-        if (nombre == "" || correo == "" || noticia == ""|| comentarios == "") {
+        if (nombre == "" || correo == "" || noticia == "" || comentarios == "") {
             alert("Por favor, complete todos los campos. ⚠️");
             return false; // Cancelar el envío del formulario
         }
@@ -194,6 +230,12 @@
         // Si los campos tienen contenido, permitir el envío del formulario
         alert("Los datos se han enviado correctamente. ✅");
         return true;
+
+        // Limpiar los campos
+        document.getElementById("nombre").value = "";
+        document.getElementById("correo").value = "";
+        document.getElementById("noticia").value = "";
+        document.getElementById("comentarios").value = "";
     }
 </script>
 <script src="base.js"></script>
